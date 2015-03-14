@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require_relative 'login_form_page_object'
+require_relative 'login_page_object'
 
 describe Login do
   

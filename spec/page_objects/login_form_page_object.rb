@@ -9,6 +9,7 @@ FAILURE_MESSAGE = { css: '.flash.error' }
   def initialize (driver)
 	 @driver = driver
 	 @driver.get ENV['base_url'] + '/login'
+	 @driver.find_element(LOGIN_FORM).displayed?.should == true
   end
 
   def with(username, password)
