@@ -20,8 +20,8 @@ it 'login_succeeded' do
   
 it 'login_failed' do
   @login.with('wrong','wrong')
-  @login.failure_message_present?.should be true
- # @login.success_message_present?.should be_falsey
+  #@login.failure_message_present?.should be true
+  @login.success_message_present?.should be false
   end
   
 end
