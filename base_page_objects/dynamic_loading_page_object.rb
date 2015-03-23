@@ -5,9 +5,8 @@ class DynamicLoading < BasePage
   START_BUTTON = {css: '#start button'}
   FINISH_TEXT = {id: 'finish'}
   
-  def initialize(driver)
-    super
-    visit '/dynamic_loading/1'
+  def dynamic_example(page_number)
+    visit "/dynamic_loading/#{page_number}"
   end
   
   def start
