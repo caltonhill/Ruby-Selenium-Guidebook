@@ -23,10 +23,10 @@ RSpec.configure do |config|
         @driver = Selenium::WebDriver.for :firefox
       when 'chrome'
         Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, 'tools/chromedriver.exe')
-        @driver = Selenium::WebDriver.for :chrome 
-       end
-    end
-  end
+        @driver = Selenium::WebDriver.for :chrome
+     end 
+   end  
+end
   
   config.after(:each) do
     if ENV['host'] == 'saucelabs'
