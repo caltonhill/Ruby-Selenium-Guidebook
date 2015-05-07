@@ -1,5 +1,5 @@
 def launch_in_parallel(config_file)
-  system("parallel_rspec #{'-n ' + ENV['processes'] if ENV['processes']} --test-options '-r ./#{config_file} --order random' spec")
+  system("parallel_rspec #{'-n ' + ENV['processes'] if ENV['processes']} --test-options '-r ./#{config_file} --order random #{'--tag ' + ENV['tag'] if ENV['tag']}' spec")
 end
 
 namespace :local do
