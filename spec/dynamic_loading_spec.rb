@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require_relative '../base_page_objects/dynamic_loading_page_object'
 
-describe 'Dynamic Loading', depth: 'deep' do
+describe 'Dynamic Loading', priority: 'medium' do
   
   before(:each) do
     @dynamic_loading = DynamicLoading.new(@driver)

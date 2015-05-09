@@ -44,14 +44,15 @@ namespace :cloud do
   end
   
   desc "Run checks in Sauce Connect by browser, version and OS"
-  task :cloud_tunnel, :browser, :version, :os do 
-    Dir.chdir('tools/the-internet')
-    process_id = Process.spawn('ruby server.rb')
-    Dir.chdir('../..')
-      ENV['tunnel'] = 'on'
+  task :cloud_tunnel, :browser, :version, :os do |t, args|
       ENV['browser'] = args[:browser]
       ENV['browser_version'] = args[:version]
       ENV['operating_system'] = args[:os]
+    Dir.chdir('tools/the-internet')
+    process_id = Process.spawn('ruby server.rb')
+    Dir.chdir('../..')      
+    ENV['tunnel'] = 'on'
+
       launch_in_parallel('config/cloud.rb')
     Process.kill("KILL", process_id)
   end

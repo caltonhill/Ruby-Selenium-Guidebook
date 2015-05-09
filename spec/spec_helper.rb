@@ -1,16 +1,14 @@
 require 'selenium-webdriver'
 
 RSpec.configure do |config|
-      # rspec-expectations config goes here. You can use an alternate
-      # assertion/expectation library such as wrong or the stdlib/minitest
-      # assertions if you prefer.
+
   
   config.before(:each) do
     case ENV['host']
     when 'saucelabs'
       caps = Selenium::WebDriver::Remote::Capabilities.send(ENV['browser'])
       caps.version = ENV['browser_version']
-      caps.platform = ENV['version']
+      caps.platform = ENV['operating_system']
       caps[:name] = example.metadata[:full_description]
       
       @driver = Selenium::WebDriver.for(

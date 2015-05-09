@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require_relative '../base_page_objects/login_page_object'
 
-describe 'Login', depth: 'shallow' do
+describe 'Login', priority: 'critical' do
   
 before(:each) do
     @login = Login.new(@driver)
