@@ -10,13 +10,13 @@ describe 'Dynamic Loading', priority: 'medium' do
   it 'Example 1: Hidden Element' do
     @dynamic_loading.dynamic_example 1
     @dynamic_loading.start
-    @dynamic_loading.finish_text_present?.should be_true
+    @dynamic_loading.finish_text_present?.should be_displayed
   end
   
   it 'Example 2: Rendered after the fact' do
     @dynamic_loading.dynamic_example 2
     @dynamic_loading.start
-    @dynamic_loading.finish_text_present?.should be_true
+    @dynamic_loading.finish_text_present?.should be_displayed
   end
   
 end

@@ -9,13 +9,18 @@ before(:each) do
 
 it 'login_succeeded' do
     @login.with('tomsmith','SuperSecretPassword!')
-    @login.success_message_present?.should be true
+    @login.success_message?.should be_displayed
   end
   
 it 'login_failed' do
     @login.with('wrong','wrong')
-    #@login.failure_message_present?.should be true
-    @login.success_message_present?.should be false
+    @login.failure_message?.should be_displayed
+    #@login.success_message?.should be false
   end
+  
+it 'forced failure' do
+  @login.with('wrong','wrong')
+  @login.failure_message?.should_not be_displayed
+end
   
 end

@@ -20,11 +20,11 @@ class Login < BasePage
     submit LOGIN_FORM
   end
 
-  def success_message_present?
+  def success_message?
     is_displayed? SUCCESS_MESSAGE
   end
   
-  def failure_message_present?
+  def failure_message?
     is_displayed? FAILURE_MESSAGE
   end
   
